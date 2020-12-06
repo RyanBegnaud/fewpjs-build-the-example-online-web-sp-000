@@ -3,7 +3,7 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
-
+let jsHeart = document.getElementsByClassName("like-glyph")[0]
 
 
 
