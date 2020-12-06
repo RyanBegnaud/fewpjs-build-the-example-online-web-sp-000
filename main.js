@@ -6,7 +6,8 @@ const FULL_HEART = '♥'
 let jsHeart = document.getElementsByClassName("like-glyph")[0]
 jsHeart.addEventListener("click", function(e){
   if (e.target.innerText === EMPTY_HEART) {
-    e.target.innerText = FULL_HEART
+    e.target.innerText = FULL_HEART;
+    e.target.syle.color = red;
   }
 });
 
