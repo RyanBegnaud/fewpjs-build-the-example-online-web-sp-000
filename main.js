@@ -18,7 +18,7 @@ function likeCallback(e) {
   mimicServerCall("bogusUrl")
    //OR: mimicServerCall("bogusUrl", {forceFailure: true})
     .then(function(serverMessage){
-       heart.innerText = glyphStates;
+       heart.innerText = glyphStates[e.target.innerText];
        heart.style.color = colorStates[heart.style.color];
     })
     .catch(function(error) {
