@@ -7,7 +7,7 @@ let jsHeart = document.getElementsByClassName("like-glyph")[0]
 jsHeart.addEventListener("click", function(e){
   if (e.target.innerText === EMPTY_HEART) {
     e.target.innerText = FULL_HEART;
-    jsHeart.color = red;
+    jsHeart.color = blue;
   }
   
   if (e.target.innerText === FULL_HEART) {
