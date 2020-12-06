@@ -9,6 +9,10 @@ jsHeart.addEventListener("click", function(e){
     e.target.innerText = FULL_HEART;
     e.target.background.syle.color = red;
   }
+  
+  if (e.target.innerText === FULL_HEART) {
+    e.target.innerText = EMPTY_HEART;
+  }
 });
 
 
