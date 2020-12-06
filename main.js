@@ -1,20 +1,37 @@
-// Defining text characters for the empty and full hearts for you to use later.
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
-// Your JavaScript code goes here!
-let jsHeart = document.getElementsByClassName("like-glyph")[0]
-jsHeart.addEventListener("click", function(e){
-  if (e.target.innerText === EMPTY_HEART) {
-    e.target.innerText = FULL_HEART;
-    e.target.addClass = ".activated-heart";
-  }
-  
-  if (e.target.innerText === FULL_HEART) {
-    e.target.innerText = EMPTY_HEART;
-  }
-});
+let glyphStates = {
+  "♡": "♥",
+  "♥": "♡"
+};
 
+let colorStates = {
+  "red" : "",
+  "": "red"
+};
+
+let articleHearts = document.querySelectorAll(".like");
+
+function likeCallback(e) {
+  let heart = e.target;
+  mimicServerCall("bogusUrl")
+   //OR: mimicServerCall("bogusUrl", {forceFailure: true})
+    .then(function(serverMessage){
+       heart.innerText = glyphStates[heart.innerText];
+       heart.style.color = colorStates[heart.style.color];
+    })
+    .catch(function(error) {
+      // Basic
+      // alert("Something went wrong!");
+      // or....
+      document.getElementById("modal").className = "";
+    });
+}
+
+for (let glyph of articleHearts) {
+  glyph.addEventListener("click", likeCallback);
+}
 
 
 //------------------------------------------------------------------------------
